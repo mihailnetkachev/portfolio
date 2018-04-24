@@ -1,0 +1,213 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+	.topBanner__contentWrapper .sectionTitleContainer
+		font-size: 3rem
+
+	.quotes__itemText,
+	.reviews__itemText
+		font-size: 1em
+
+	.partners__listItem
+		margin-right: 3rem
+
+	.clients__listItem
+		padding: 1.875rem
+	
+	.footer__list
+		flex-wrap: wrap
+		flex-direction: row-reverse
+	.footer__listItem
+		margin-right: 0
+	.footer__listItem__main
+		margin-top: 4.5rem
+		flex-basis: 100%
+		order: 10
+	.footer__listItem__blog,
+	.footer__listItem__gallery
+		flex-basis: 50%
+		box-sizing: border-box
+		padding: 1rem
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+	
+	.header__menuList
+		flex-basis: 100%
+		margin-top: 1.5rem
+
+	.services__listItem
+		flex: 1 1 50%
+	.services__listItem:first-child
+		min-height: 0
+
+	.offers__contentWrapper
+		flex-direction: column
+		align-items: stretch
+	.offers__imgWrapper
+		margin-right: 0
+	.offers__list
+		margin-top: 2.875rem
+		
+	.quotes__listItem,
+	.reviews__listItem
+		flex-direction: column
+	.quotes__itemImgWrapper,
+	.reviews__itemImgWrapper
+		margin-right: 0
+	.quotes__itemTextWrapper,
+	.reviews__itemTextWrapper
+		margin-top: 2.875rem
+		text-align: right
+	.quotes__itemText,
+	.reviews__itemText
+		text-align: center
+
+	.partners__list
+		flex-wrap: wrap
+	.partners__listItem
+		flex-basis: 33.3%
+		margin-right: 0
+		box-sizing: border-box
+		padding: 1.875rem
+
+	.works__generalList
+		flex-wrap: wrap
+	.works__generalItem
+		flex-basis: 50%
+	.works__itemTextWrapper
+		justify-content: flex-end
+		align-items: flex-start
+		padding: 1.75em
+		background-image: none
+		color: $sub
+		opacity: 1
+	.works__itemIcon
+		fill: $sub
+		
+	.clients__listItem
+		flex-direction: column
+		align-items: stretch
+		text-align: center
+	.clients__itemImgWrapper
+		margin-right: 0
+		align-self: center
+	.clients__itemTitle
+		margin-top: 1.25rem
+	.clients__itemSubTitle
+		&:after
+			left: 50%
+			transform: translateX(-50%)
+
+	.blog__list
+		flex-direction: column
+	.blog__listItem
+		margin-top: 2.875rem
+		&:first-child
+			margin-right: 0
+
+@media only screen and (max-width: 700px)
+	
+	.sectionText
+		padding: 0
+
+	.about__list,
+	.team__list
+		flex-direction: column
+	.about__listItem,
+	.team__listItem
+		margin-right: 0
+		margin-top: 1.875rem
+		&:first-child
+			margin-top: 0
+
+	.team__socialList
+		background-image: none
+		opacity: 1
+		align-items: flex-end
+	.team__socialItem
+		margin-bottom: 1.75rem
+
+	.works__itemTextWrapper
+		font-size: 0.875rem
+
+	.footer__listItem__blog,
+	.footer__listItem__gallery
+		display: none
+	.footer__listItem__main
+		margin-top: 0
+
+@media only screen and (max-width : 600px)
+	/**/
+
+	.header__menuItem
+		display: block
+		margin-top: 1rem
+
+		&:first-child
+			margin-top: 0
+
+	.topBanner__contentWrapper .sectionTitleContainer
+		font-size: 2.5rem
+	
+	.services__listItem
+		flex: 1 1 100%
+
+	.feature__img__main
+		left: 0
+	.feature__img__sub
+		left: 50%
+		transform: translateX(-50%)
+
+	.quotes__list,
+	.reviews__list
+		.owl-prev,
+		.owl-next
+			display: none
+	.quotes__listItem,
+	.reviews__listItem
+		padding: 0
+
+	.partners__listItem
+		padding: 1rem
+
+	.works__itemTextWrapper
+		font-size: 0.75rem
+
+	.clients__listItem
+		flex-basis: 100%
+		padding-right: 0
+		padding-left: 0
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+	.topBanner__contentWrapper .sectionTitleContainer
+		font-size: 1.5rem
+		padding-bottom: 4em
+		&:after
+			bottom: 2em
+
+	.works__itemTextWrapper
+		font-size: 0.5rem
+
+	.footer__form
+		flex-wrap: wrap
+		flex-direction: column
+	.footer__formItem
+		max-width: 100%
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+

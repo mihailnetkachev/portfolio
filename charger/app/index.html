@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Charger Custom</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__navigation">
+			<a href="#" class="header__logoLink">
+				<svg class="header__logoIcon" viewBox="0 0 42 41">
+					<use xlink:href="./img/icons/icons.svg#chargerLogo"/>
+				</svg>
+				<h1 class="header__logoTitle">
+					<span class="header__logoTitle__main">Charger</span>
+					<span class="header__logoTitle__sub">Custom</span>
+				</h1>
+			</a>
+			<ul class="header__menuList undisplay">
+				<li class="header__menuItem"><a href="#about" class="header__menuLink">About</a></li>
+				<li class="header__menuItem"><a href="#services" class="header__menuLink">Services</a></li>
+				<li class="header__menuItem"><a href="#projects" class="header__menuLink">Projects</a></li>
+			</ul>
+			<div class="header__menuButtonWrapper">
+				<a href="#" class="header__menuButton">
+					<span class="header__menuButtonIcon"><i class="miInner"></i></span>
+					<span class="header__menuButtonText">Menu</span>
+				</a>
+			</div>
+		</nav>
+	</header>
+
+	<main class="main">
+		<section class="banner">
+			<ul class="banner__list js__banner__list owl-carousel">
+				<li class="banner__listItem">
+					<div class="banner__itemContentWrapper">
+						<h2 class="banner__itemTitle"><span class="block">We’re</span><span class="block">Charger</span></h2>
+						<p class="banner__itemText">One of the most powerful and recognized brand names in the custom automotive industry.</p>
+						<a href="#" class="banner__itemLink sectionLink">Read more</a>
+					</div>
+				</li>
+				<li class="banner__listItem">
+					<div class="banner__itemContentWrapper">
+						<h2 class="banner__itemTitle"><span class="block">We’re</span><span class="block">Charger</span></h2>
+						<p class="banner__itemText">One of the most powerful and recognized brand names in the custom automotive industry.</p>
+						<a href="#" class="banner__itemLink sectionLink">Read more</a>
+					</div>
+				</li>
+				<li class="banner__listItem">
+					<div class="banner__itemContentWrapper">
+						<h2 class="banner__itemTitle"><span class="block">We’re</span><span class="block">Charger</span></h2>
+						<p class="banner__itemText">One of the most powerful and recognized brand names in the custom automotive industry.</p>
+						<a href="#" class="banner__itemLink sectionLink">Read more</a>
+					</div>
+				</li>
+			</ul>
+			<nav class="banner__socialWrapper">
+				<ul class="banner__socialList">
+					<li class="banner__socialItem"><a href="#" class="banner__socialLink">Facebook</a></li>
+					<li class="banner__socialItem"><a href="#" class="banner__socialLink">Twitter</a></li>
+					<li class="banner__socialItem"><a href="#" class="banner__socialLink">Youtube</a></li>
+				</ul>
+			</nav>
+		</section>
+		<section class="about" id="about" data-letter="A">
+			<div class="sectionWrapper">
+				<div class="about__imgWrapper">
+					<picture>
+						<source media="(max-width: 425px)" srcset="./img/longbearded__sm.jpg">
+						<img src="./img/longbearded.jpg" alt="A man with a long beard" class="about__img">
+					</picture>
+				</div>
+				<div class="about__articleWrapper">
+					<h2 class="about__title sectionTitle">About us</h2>
+					<p class="about__text">Charger Customs - luxury automotive restyling center based in Corona, California. There is no limit to what we can do.</p>
+					<a href="#" class="about__link sectionButton">More</a>
+				</div>
+			</div>
+		</section>
+		<section class="services" id="services" data-letter="S">
+			<div class="sectionWrapper">
+				<h2 class="services__title sectionTitle">Services</h2>
+				<a href="#" class="services__link sectionLink">Read more</a>
+				<ul class="services__list">
+					<li class="services__listItem" data-title="Tuning">
+						<img src="./img/services1.jpg" alt="A car and a mechanic" class="services__itemImg">
+						<div class="services__itemTextWrapper">
+							<h3 class="services__itemTitle">Tuning</h3>
+							<p class="services__itemText">Modification of the performance or appearance of a vehicle.</p>
+							<a href="#" class="services__itemLink sectionLink">Read more</a>
+						</div>
+					</li>
+					<li class="services__listItem" data-title="Restoration">
+						<img src="./img/services2.jpg" alt="A vintage black car" class="services__itemImg">
+						<div class="services__itemTextWrapper">
+							<h3 class="services__itemTitle">Restoration</h3>
+							<p class="services__itemText">Modification of the performance or appearance of a vehicle.</p>
+							<a href="#" class="services__itemLink sectionLink">Read more</a>
+						</div>
+					</li>
+					<li class="services__listItem" data-title="Repairs">
+						<img src="./img/services3.jpg" alt="A hammer on the hood" class="services__itemImg">
+						<div class="services__itemTextWrapper">
+							<h3 class="services__itemTitle">Repairs</h3>
+							<p class="services__itemText">Modification of the performance or appearance of a vehicle.</p>
+							<a href="#" class="services__itemLink sectionLink">Read more</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="projects" id="projects" data-letter="P">
+			<div class="sectionWrapper">
+				<h2 class="projects__title sectionTitle">Projects</h2>
+				<ul class="projects__list js__projects__list owl-carousel">
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+				</ul>
+				<ul class="projects__list js__projects__list owl-carousel">
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+					<li class="projects__listItem">
+						<img src="./img/project1.jpg" alt="Porsche 911" class="projects__itemImg">
+						<a href="#" class="projects__itemLink">
+							<h3 class="projects__itemTitle">Porsche 911</h3>
+							<p class="projects__itemText">These guys do amazing work here.</p>
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="projects__link sectionButton">More</a>
+			</div>
+		</section>
+		<section class="reviews" data-letter="R">
+			<div class="sectionWrapper">
+				<ul class="reviews__list js__reviews__list owl-carousel">
+					<li class="reviews__listItem">
+						<p class="reviews__itemText">These guys do amazing work here. They made my car awesome.</p>
+						<div class="reviews__itemTitle">John Brown</div>
+						<h3 class="reviews__itemSubtitle">Chevrolet Camaro</h3>
+					</li>
+					<li class="reviews__listItem">
+						<p class="reviews__itemText">These guys do amazing work here. They made my car awesome.</p>
+						<div class="reviews__itemTitle">John Brown</div>
+						<h3 class="reviews__itemSubtitle">Chevrolet Camaro</h3>
+					</li>
+					<li class="reviews__listItem">
+						<p class="reviews__itemText">These guys do amazing work here. They made my car awesome.</p>
+						<div class="reviews__itemTitle">John Brown</div>
+						<h3 class="reviews__itemSubtitle">Chevrolet Camaro</h3>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="charger" data-letter="C">
+			<div class="sectionWrapper">
+				<div class="charger__imgWrapper">
+					<picture>
+						<source media="(max-width: 425px)" srcset="./img/garage__sm.jpg">
+						<img src="./img/garage.jpg" alt="A car in the garage" class="charger__img">
+					</picture>					
+				</div>
+				<div class="charger__articleWrapper">
+					<h2 class="charger__title sectionTitle">Charger</h2>
+					<p class="charger__text">The Charger Customs<sup>&#174;</sup> has grown into one of the most powerful and brand names in the custom automotive industry. We now have franchises stretching across the world. We have worked with some of the largest brands in the world, including Fortune 500 companies. We are now a household name in multiple countries and plan to continue dominating the custom car world and expand our global reach with amazing rides and concepts.<br>We have an exceptional team, both in the workshop and office. We've done what others can't and we constantly strive to push the boundaries and expectations of this industry. If you or your company feel that you have something beneficial to offer our brand, we look forward to hearing from you.</p>
+					<a href="#" class="charger__link sectionButton">More</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footerWrapper">
+			<a href="#" class="footer__logoLink">
+				<svg class="footer__logoIcon" viewBox="0 0 42 41">
+					<use xlink:href="./img/icons/icons.svg#chargerLogo"/>
+				</svg>
+				<h1 class="footer__logoTitle">
+					<span class="footer__logoTitle__main">Charger</span>
+					<span class="footer__logoTitle__sub">Custom</span>
+				</h1>
+			</a>
+			<ul class="footer__menuList">
+				<li class="footer__menuItem"><a href="#about" class="footer__menuLink">About</a></li>
+				<li class="footer__menuItem"><a href="#services" class="footer__menuLink">Services</a></li>
+				<li class="footer__menuItem"><a href="#projects" class="footer__menuLink">Projects</a></li>
+			</ul>
+			<div class="footer__copyrights">
+				<span class="footer__copyrightsGroup">© Copyright 2017. All Rights Reserved</span>
+				<span class="footer__copyrightsGroup">Designed by <a href="#" class="footer__link">Kirill Yevdokimov</a></span>
+			</div>
+		</div>
+	</footer>
+
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Yebo</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__navigation">
+			<ul class="header__menuList">
+				<li class="header__menuItem"><a href="#about" class="header__menuLink">About us</a></li>
+				<li class="header__menuItem"><a href="#work" class="header__menuLink">Work</a></li>
+				<li class="header__logoItem">
+					<a href="#" class="header__logoLink">
+						<img src="./img/logos/mainLogo.png" alt="Company logotype" class="header__logoIcon">
+					</a>
+				</li>
+				<li class="header__menuItem"><a href="#shop" class="header__menuLink">Shop</a></li>
+				<li class="header__menuItem"><a href="#contact" class="header__menuLink">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="main">
+		<section class="banner"></section>
+		<section id="about" class="about">
+			<div class="sectionWrapper">
+				<h1 class="about__title">
+					<img src="./img/icons/chain.png" alt="Chain icon" class="about__titleIcon">
+					<span class="about__titleLine">A new generation of vintage bike</span>
+				</h1>
+				<p class="about__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			</div>
+		</section>
+		<section id="work" class="works">
+			<ul class="works__list">
+				<li class="works__listItem works__listItem__big">
+					<picture>
+						<source media="(max-width: 640px)" srcset="./img/works1__sm.jpg">
+						<img src="./img/works1.jpg" alt="Works preview" class="works__itemImg">
+					</picture>
+					<img src="./img/logos/bicycle.png" alt="Bicycle company logotype" class="works__itemIcon">
+				</li>
+				<li class="works__listItem">
+					<img src="./img/works2.jpg" alt="Works preview" class="works__itemImg works__itemImg__animated">
+					<div class="works__itemCard">
+						<h3 class="works__itemCardTitle">
+							<img src="./img/icons/frame.png" alt="Frame icon" class="works__itemCardTitleIcon">
+							<span class="works__itemCardTitleLine">Vintage Oliva</span>
+						</h3>
+						<p class="works__itemCardText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.</p>
+					</div>
+				</li>
+				<li class="works__listItem">
+					<img src="./img/works3.jpg" alt="Works preview" class="works__itemImg works__itemImg__animated">
+					<div class="works__itemCard">
+						<h3 class="works__itemCardTitle">
+							<img src="./img/icons/pedals.png" alt="Pedals icon" class="works__itemCardTitleIcon">
+							<span class="works__itemCardTitleLine">La Boriosa</span>
+						</h3>
+						<p class="works__itemCardText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.</p>
+					</div>
+				</li>
+				<li class="works__listItem works__listItem__big">
+					<picture>
+						<source media="(max-width: 640px)" srcset="./img/works4__sm.jpg">
+						<img src="./img/works4.jpg" alt="Works preview" class="works__itemImg">
+					</picture>
+					<img src="./img/logos/vintage.png" alt="Vintage company logotype" class="works__itemIcon">
+				</li>
+				<li class="works__listItem">
+					<img src="./img/works5.jpg" alt="Works preview" class="works__itemImg">
+					<img src="./img/logos/bicycles.png" alt="Bicycles company logotype" class="works__itemIcon">
+				</li>
+				<li class="works__listItem">
+					<img src="./img/works6.jpg" alt="Works preview" class="works__itemImg works__itemImg__animated">
+					<div class="works__itemCard">
+						<h3 class="works__itemCardTitle">
+							<img src="./img/icons/helm.png" alt="Helm icon" class="works__itemCardTitleIcon">
+							<span class="works__itemCardTitleLine">Retrò Bike - M. Hulot</span>
+						</h3>
+						<p class="works__itemCardText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived.</p>
+					</div>
+				</li>
+				<li class="works__listItem">
+					<img src="./img/works7.jpg" alt="Works preview" class="works__itemImg">
+				</li>
+			</ul>
+		</section>
+		<section class="reviews">
+			<div class="sectionWrapper">
+				<ul class="reviews__list js__reviews__list owl-carousel">
+					<li class="reviews__listItem">
+						<h3 class="reviews__itemTitle">
+							<img src="./img/icons/twitter.png" alt="Twitter icon" class="reviews__itemTitleIcon">
+							<span class="reviews__itemTitleLine" data-time="35 min">AOD New York @aod</span>
+						</h3>
+						<p class="reviews__itemText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus. Nullam a odio porttitor, dictum turpis vitae, pretium ante amet.</p>
+					</li>
+					<li class="reviews__listItem">
+						<h3 class="reviews__itemTitle">
+							<img src="./img/icons/twitter.png" alt="Twitter icon" class="reviews__itemTitleIcon">
+							<span class="reviews__itemTitleLine" data-time="35 min">AOD New York @aod</span>
+						</h3>
+						<p class="reviews__itemText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus. Nullam a odio porttitor, dictum turpis vitae, pretium ante amet.</p>
+					</li>
+					<li class="reviews__listItem">
+						<h3 class="reviews__itemTitle">
+							<img src="./img/icons/twitter.png" alt="Twitter icon" class="reviews__itemTitleIcon">
+							<span class="reviews__itemTitleLine" data-time="35 min">AOD New York @aod</span>
+						</h3>
+						<p class="reviews__itemText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus ac nulla semper rhoncus. Nullam a odio porttitor, dictum turpis vitae, pretium ante amet.</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section id="shop" class="shop">
+			<div class="shop__galleryField">
+				<ul class="shop__group">
+					<li class="shop__groupItem">
+						<img src="./img/shop1.jpg" alt="Shop preview" class="shop__itemImg">
+						<a href="#" class="shop__itemLink">
+							<img src="./img/icons/bicycle.png" alt="Bicycle icon" class="shop__itemIcon">
+							<h3 class="shop__itemTitle">Shop now</h3>
+						</a>
+					</li>
+					<li class="shop__groupItem">
+						<img src="./img/shop2.jpg" alt="Shop preview" class="shop__itemImg">
+						<a href="#" class="shop__itemLink">
+							<img src="./img/icons/bicycle.png" alt="Bicycle icon" class="shop__itemIcon">
+							<h3 class="shop__itemTitle">Shop now</h3>
+						</a>
+					</li>
+					<li class="shop__groupItem">
+						<img src="./img/shop3.jpg" alt="Shop preview" class="shop__itemImg">
+						<a href="#" class="shop__itemLink">
+							<img src="./img/icons/bicycle.png" alt="Bicycle icon" class="shop__itemIcon">
+							<h3 class="shop__itemTitle">Shop now</h3>
+						</a>
+					</li>
+				</ul>
+				<ul class="shop__group">
+					<li class="shop__groupItem">
+						<img src="./img/shop4.jpg" alt="Shop preview" class="shop__itemImg">
+						<a href="#" class="shop__itemLink">
+							<img src="./img/icons/bicycle.png" alt="Bicycle icon" class="shop__itemIcon">
+							<h3 class="shop__itemTitle">Shop now</h3>
+						</a>
+					</li>
+					<li class="shop__groupItem">
+						<img src="./img/shop5.jpg" alt="Shop preview" class="shop__itemImg">
+						<a href="#" class="shop__itemLink">
+							<img src="./img/icons/bicycle.png" alt="Bicycle icon" class="shop__itemIcon">
+							<h3 class="shop__itemTitle">Shop now</h3>
+						</a>
+					</li>
+				</ul>
+				<ul class="shop__group">
+					<li class="shop__groupItem">
+						<img src="./img/shop7.jpg" alt="Shop preview" class="shop__itemImg">
+						<a href="#" class="shop__itemLink">
+							<img src="./img/icons/bicycle.png" alt="Bicycle icon" class="shop__itemIcon">
+							<h3 class="shop__itemTitle">Shop now</h3>
+						</a>
+					</li>
+					<li class="shop__groupItem">
+						<img src="./img/shop8.jpg" alt="Shop preview" class="shop__itemImg">
+						<a href="#" class="shop__itemLink">
+							<img src="./img/icons/bicycle.png" alt="Bicycle icon" class="shop__itemIcon">
+							<h3 class="shop__itemTitle">Shop now</h3>
+						</a>
+					</li>
+					<li class="shop__groupItem">
+						<img src="./img/shop6.jpg" alt="Shop preview" class="shop__itemImg">
+						<a href="#" class="shop__itemLink">
+							<img src="./img/icons/bicycle.png" alt="Bicycle icon" class="shop__itemIcon">
+							<h3 class="shop__itemTitle">Shop now</h3>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="shop__buttonField">
+				<a href="#" class="shop__link">Discover the shop</a>
+			</div>
+		</section>
+		<section id="contact" class="contact">
+			<div class="sectionWrapper">
+				<img src="./img/logos/mainLogo.png" alt="Company logotype" class="contact__logoIcon">
+				<h2 class="contact__title">Stay on the saddle!</h2>
+				<form action="#" class="contact__form">
+					<input type="email" class="contact__input" placeholder="enter your email...">
+					<input type="submit" class="contact__submit" value="Go">
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="sectionWrapper">
+			<div class="footer__address">
+				<h3 class="footer__title">AOD New York</h3>
+				<p class="footer__text">2250 Lexington Avenue</p>
+				<p class="footer__text">New York, NY 10035  - <a href="#" class="footer__link">info@domain.com</a></p>
+			</div>
+			<ul class="footer__socialList">
+				<li class="footer__socialItem"><a href="#" class="footer__socialLink"><img src="./img/icons/twitter-circle.png" alt="twitter icon" class="footer__socialIcon"></a></li>
+				<li class="footer__socialItem"><a href="#" class="footer__socialLink"><img src="./img/icons/facebook-circle.png" alt="facebook icon" class="footer__socialIcon"></a></li>
+				<li class="footer__socialItem"><a href="#" class="footer__socialLink"><img src="./img/icons/pinterest-circle.png" alt="pinterest icon" class="footer__socialIcon"></a></li>
+			</ul>
+			<div class="footer__copyrights">
+				<p class="footer__text">Handcrafted by</p>
+				<a href="#" class="footer__logoLink"><img src="./img/logos/yebo.png" alt="Yebo logotype" class="footer__logoIcon"></a>
+			</div>
+		</div>
+	</footer>
+
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

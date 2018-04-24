@@ -1,0 +1,87 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (max-width : 1350px)
+	/**/
+	
+	.header__menuButton
+		display: block
+	.header__menuList
+		display: none
+
+	.discography__itemDescription
+		flex-basis: 100%
+		margin: $xsSize 0 0
+	.discography__itemLink
+		margin-left: auto
+		margin-right: auto
+
+	.compositions__itemDescription,
+	.compositions__itemVideoField
+		flex-basis: 100%
+		margin: 0 auto
+		max-width: $xxxlSize
+	.compositions__listItem
+		.compositions__itemDescription:nth-child(n):after
+			top: 100%
+			left: 50%
+	.compositions__itemVideoWrapper
+		padding-top: 56.25%
+		height: 0
+
+	.tracks__listItem
+		flex-basis: 45%
+		margin-left: 0
+		&:nth-child(even)
+			margin-left: $sSize
+		&:nth-child(n+3)
+			margin-top: $sSize
+
+@media only screen and (max-width : 750px)
+
+	.facts__list
+		.owl-prev,
+		.owl-next
+			display: none
+
+	.tracks__listItem
+		flex-basis: 100%
+		max-width: $xxlSize
+		&:nth-child(n)
+			margin: $sSize auto 0
+		&:first-child
+			margin-top: 0
+
+@media only screen and (max-width : 550px)
+	
+	.compositions__feedback
+		margin-top: $sSize
+		flex-basis: 100%
+
+@media only screen and (max-width : 450px)
+	
+	.sectionWrapper
+		padding: $lSize $xxsSize
+	.sectionTitle
+		font-size: $xsSize
+		.sectionTitleText:before
+			left: -$xxsSize
+			right: -$xxsSize
+
+	.tours__article
+		margin-top: $xlSize
+	
+	.facts
+		padding: $lSize 0
+
+	.events__title,
+	.contact__title
+		text-align: center
+
+	.history__itemTitle
+		&:before,
+		&:after
+			display: none

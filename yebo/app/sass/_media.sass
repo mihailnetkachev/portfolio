@@ -1,0 +1,84 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1350px)
+	/**/
+	.works__listItem
+		&__big
+			flex-basis: 100%
+		&:last-child
+			display: none
+		&:hover .works__itemImg__animated
+			transform: translateY(0)
+	.works__itemCard
+		top: 0
+		bottom: 0
+		overflow: auto
+		background-color: rgba($light, .8)
+
+		&:after
+			display: none
+
+	.shop__galleryField
+		flex-direction: column
+	.shop__itemLink
+		justify-content: flex-end
+		align-items: stretch
+		background-color: transparent
+		opacity: 1
+	.shop__itemTitle
+		padding: .5rem
+		background-color: rgba($accent, .8)
+
+@media only screen and (max-width : 650px)
+	.header__logoItem
+		flex-basis: 100%
+		order: -1
+		margin-bottom: .5rem
+	.header__menuItem
+		&:before
+			margin: 0 .25rem
+	.header__logoItem + .header__menuItem
+		&:before
+			display: inline-block
+
+	.works__listItem
+		flex-basis: 100%
+		
+		&:nth-child(2)
+			order: -1
+		&:nth-last-child(3)
+			display: none
+
+	.contact__input,
+	.contact__submit
+		flex-basis: 100%
+	.contact__submit
+		margin-left: 0
+
+	.footer .sectionWrapper
+
+	.footer__address,
+	.footer__socialList,
+	.footer__copyrights
+		flex-basis: 100%
+		text-align: center
+	.footer__socialList
+		margin-top: $basicSize
+	.footer__copyrights
+		margin-top: $basicSize
+		justify-content: center
+
+@media only screen and (max-width : 650px)
+	
+	.works__itemImg__animated
+		position: absolute
+		display: block
+		height: 100%
+		width: 100%
+		object-fit: cover
+		object-position: center
+	.works__itemCard
+		position: relative

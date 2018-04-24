@@ -1,0 +1,492 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+html, body
+	height: 100%
+
+body, h1, h2, h3, h4, h5, h6, p, ul
+	margin: 0
+	font-size: inherit
+
+ul
+	padding: 0
+	list-style-type: none
+
+a
+	text-decoration: none
+	color: inherit
+
+input, button
+	box-sizing: border-box
+	outline: none
+	border: none
+	font-family: $default-font
+	background-color: transparent
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.5
+	font-family: $default-font
+	color: $main
+	overflow-x: hidden
+	opacity: 1
+
+// general
+
+%wrapper
+	margin: 0 auto
+	max-width: 1110px
+
+.sectionWrapper
+	@extend %wrapper
+	padding: 6.875rem .5rem 7.125rem
+
+.animated 
+	animation-duration: 1s
+	animation-fill-mode: both
+
+.fadeInUp
+	animation-name: fadeInUp
+
+.zoomIn
+	animation-name: zoomIn
+
+// header
+
+.header
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	z-index: 30
+
+.header__navigation
+	@extend %wrapper
+	padding: $basicSize .5rem 0
+
+.header__menuList
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	align-items: center
+
+.header__menuItem
+	text-transform: uppercase
+	font-weight: 700
+	font-size: .8125em
+	color: #4d4959
+	letter-spacing: .2em
+
+	&:before
+		content: '.'
+		display: inline-block
+		margin: 0 $basicSize
+
+	&:first-child:before
+		display: none
+
+.header__logoItem + .header__menuItem
+	&:before
+		display: none
+
+.header__menuLink
+	&:hover
+		color: $accent
+
+.header__logoItem
+	margin: 0 4rem
+
+.header__logoLink
+	display: block
+	text-align: center
+
+	&:hover
+		opacity: .5
+
+.header__logoIcon
+	display: inline-block
+	max-width: 5.5rem
+	height: auto
+
+// banner
+
+.banner
+	min-height: 100vh
+	background:
+		image: url(../img/bg/banner.jpg)
+		repeat: no-repeat
+		position: center
+		size: cover
+
+// about
+
+.about
+	background-color: $sub
+
+.about__title
+	color: $dark
+	text-align: center
+	text-transform: uppercase
+	font-size: 1.125em
+	line-height: 1
+	letter-spacing: .2em
+
+.about__titleIcon
+	display: inline-block
+	max-width: 3.25rem
+	height: auto
+
+.about__titleLine
+	margin-top: $basicSize
+	display: block
+	
+.about__text
+	margin-top: $basicSize
+	text-align: center
+	font-size: 1.125rem
+	line-height: $basicSize
+
+// works
+
+.works__list
+	display: flex
+	flex-wrap: wrap
+
+.works__listItem
+	flex: 1 1 33.3333%
+	position: relative
+	overflow: hidden
+
+	&__big
+		flex-basis: 66.6666%
+
+	&:hover
+		.works__itemCard
+			top: 0
+		.works__itemImg__animated
+			transform: translateY(8rem)
+			filter: grayscale(1)
+
+.works__itemImg
+	display: block
+	width: 100%
+	height: auto
+	transition: .5s
+
+.works__itemIcon
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	z-index: 10
+	display: block
+
+.works__itemCard
+	position: absolute
+	top: -100%
+	right: 0
+	left: 0
+	z-index: 10
+	max-height: 100%
+	padding: 4rem
+	background-color: $light
+	transition: .5s
+
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform-origin: center
+		transform: translate(-50%, 50%) rotate(45deg)
+		display: block
+		width: 1rem
+		height: 1rem
+		background-color: $light
+
+.works__itemCardTitle
+	text-align: center
+	text-transform: uppercase
+	font-size: 1.125em
+	color: $dark
+	line-height: 1
+	letter-spacing: .2em
+
+.works__itemCardTitleIcon
+	display: inline-block
+	max-width: 2.75rem
+	height: auto
+
+.works__itemCardTitleLine
+	display: block
+	margin-top: 2rem
+
+.works__itemCardText
+	position: relative
+	margin-top: 1.625rem
+	padding-bottom: 2.5rem
+	line-height: 1.875em
+
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		width: 3.25rem
+		height: 1px
+		background-color: #353738
+
+// reviews
+
+.reviews
+	background-color: $sub
+
+.reviews__list
+	.owl-dots
+		margin-top: 4rem
+		text-align: center
+	
+		.active
+			background-color: $main
+
+	.owl-dot
+		display: inline-block
+		box-sizing: border-box
+		margin-left: .5em
+		border: 1px solid $main
+		border-radius: 50%
+		width: .75rem
+		height: .75rem
+
+		&:first-child
+			margin-left: 0
+
+		&:hover
+			border-color: $accent
+
+.reviews__itemTitle
+	color: $dark
+	text-align: center
+	font-size: 1.125em
+	line-height: 1
+	letter-spacing: .2
+
+.reviews__itemTitleIcon
+	display: inline-block !important
+	max-width: 2rem
+	height: auto
+
+.reviews__itemTitleLine
+	display: block
+	margin-top: $basicSize
+
+	&:after
+		content: attr(data-time)
+		color: $main
+		font-family: $special-font
+		font-weight: 400
+		display: inline-block
+		margin-left: .5em
+
+.reviews__itemText
+	margin-top: 1em
+	text-align: center
+	font-style: italic
+	font-size: 1.5em
+
+// shop
+
+.shop__galleryField
+	display: flex
+
+.shop__group
+	flex: 1 1 33.3333%
+	display: flex
+	flex-wrap: wrap
+
+	&:last-child
+		flex-wrap: wrap-reverse
+
+.shop__groupItem
+	flex: 1 1 50%
+	position: relative
+
+	&:hover
+		.shop__itemLink
+			opacity: 1
+		.shop__itemIcon
+			display: block
+
+.shop__itemImg
+	display: block
+	width: 100%
+	height: auto
+
+.shop__itemLink
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	background-color: rgba($accent, .8)
+	color: $light
+	text-transform: uppercase
+	font-weight: 700
+	font-size: .875em
+	letter-spacing: .2em
+	opacity: 0
+
+.shop__itemIcon
+	display: none
+	max-width: 3.125rem
+	height: auto
+	animation: apperancingLeft .5s
+
+@keyframes apperancingLeft
+	0%
+		opacity: 0
+		transform: translateX(-50px)
+	100%
+		opacity: 1
+		transform: translateX(0)
+
+.shop__itemTitle
+	margin-top: .5em
+
+.shop__buttonField
+	padding: 4.6875rem 0
+	background-color: $dark
+	text-align: center
+
+.shop__link
+	display: inline-block
+	border: 1px solid $sub
+	padding: 1.5em 4em 1.25em
+	color: $sub
+	text-transform: uppercase
+	font-weight: 700
+	font-size: .875em
+	letter-spacing: .2em
+
+	&:hover
+		border-color: $accent
+		color: $accent
+
+// contact
+
+.contact
+	text-align: center
+
+.contact__logoIcon
+	display: inline-block
+	max-width: 5.5rem
+	height: auto
+
+.contact__title
+	margin-top: $basicSize
+	font-style: italic
+	font-size: 1.5em
+	line-height: 1
+
+.contact__form
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	margin-top: $basicSize
+
+.contact__input
+	flex-basis: 20em
+	border: 1px solid #d3d7d9
+	padding: 1.75rem 1.75rem 1.5rem
+	color: #d3d7d9
+	font-size: 1.25em
+
+	&[placeholder]
+		font-style: italic
+		color: $dark
+
+	&:focus
+		border-color: $accent
+
+.contact__submit
+	margin-left: .5rem
+	padding: 1.25rem 2.75rem
+	background-color: $accent
+	color: $light
+	text-transform: uppercase
+	font-weight: 300
+	font-size: 1.5em
+
+// footer
+
+.footer
+	background-color: $sub
+
+	.sectionWrapper
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+
+.footer__text
+	font-style: italic
+	font-size: .875em
+
+.footer__link,
+.footer__socialLink,
+.footer__logoLink
+	display: inline-block
+
+	&:hover
+		opacity: .5
+
+.footer__address,
+.footer__copyrights
+	flex-basis: 235px
+
+.footer__socialList
+	text-align: center
+
+.footer__socialItem
+	display: inline-block
+	margin-left: 1em
+
+	&:first-child
+		margin-left: 0
+
+.footer__copyrights
+	display: flex
+	justify-content: flex-end
+	align-items: center
+
+.footer__logoLink
+	margin-left: .5rem
+
+.footer__logoIcon
+	max-width: 5.5em
+	height: auto
+
+@keyframes fadeInUp
+	0%
+		opacity: 0
+		transform: translate3d(0, 100%, 0)
+	100%
+		opacity: 1
+		transform: translate3d(0, 0, 0)
+
+@keyframes zoomIn
+	from
+		opacity: 0
+		transform: scale3d(0.3, 0.3, 0.3)
+	50%
+		opacity: 1
+
+@import "media" // Всегда в конце

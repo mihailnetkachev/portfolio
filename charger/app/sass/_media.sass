@@ -1,0 +1,94 @@
+@import "vars"
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1350px)
+
+	section:after
+		display: none
+
+	.about, .charger
+		.sectionWrapper
+			flex-direction: column
+
+	.about__articleWrapper,
+	.charger__articleWrapper
+		margin-top: 4.25rem
+		margin-left: 0
+		text-align: center
+		.sectionTitle:after
+			left: 50%
+			transform: translateX(-50%)
+
+	.services__list
+		flex-direction: column
+		align-items: center
+	.services__listItem
+		margin-left: 0
+		margin-top: $mediumSize
+		&:after
+			display: none
+		&:first-child
+			margin-top: 0
+	.services__listItem,
+	.projects__listItem,
+		&:before
+			opacity: .75
+	.services__itemTextWrapper,
+	.projects__itemLink
+		opacity: 1
+
+/* Phablet */
+@media only screen and (max-width : 750px)
+
+	.header__menuList
+		flex-basis: 100%
+		order: 10
+		margin-top: $mediumSize
+		text-align: center
+
+	.banner__itemTitle
+		font-size: 4em
+
+	.services .sectionWrapper
+		flex-direction: column
+		align-items: center
+	.sectionTitle
+		&:after
+			left: 50%
+			transform: translateX(-50%)
+	.services__link
+		margin-top: $mediumSize
+
+	.reviews__list
+		.owl-prev, .owl-next
+			display: none
+
+	.footerWrapper
+		flex-direction: column
+	.footer__logoLink
+		flex-basis: auto
+	.footer__menuList
+		margin-top: $mediumSize
+	.footer__copyrights
+		flex-direction: column
+		&Group
+			margin-top: $smallSize
+			&:first-child
+				margin-top: 0
+
+/* Mobile */
+@media only screen and (max-width : 475px)
+	
+	.header__logoLink,
+	.header__menuButtonWrapper
+		flex-basis: auto
+	.header__logoTitle,
+	.header__menuButtonText
+		display: none
+	
+	.projects__itemTitle
+		padding-bottom: 0
+		&:after
+			display: none
+	.projects__itemText
+		display: none

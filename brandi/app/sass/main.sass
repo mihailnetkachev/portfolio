@@ -1,0 +1,727 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+html, body
+	height: 100%
+
+body, h1, h2, h3, h4, h5, h6, p, ul
+	margin: 0
+	font-size: inherit
+
+ul
+	padding: 0
+	list-style-type: none
+
+a
+	text-decoration: none
+	color: inherit
+
+input, button
+	box-sizing: border-box
+	outline: none
+	border: none
+	font-family: $default-font
+	background-color: transparent
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.5
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+
+// genral styles
+
+[class*="logoLink"]
+	font-family: $cursive-font
+	font-size: 1.75rem
+	letter-spacing: .05em
+
+%wrapper
+	margin: 0 auto
+	max-width: 1186px
+
+.sectionWrapper
+	@extend %wrapper
+	padding: 6.25rem .5rem
+
+.sectionTitle
+	position: relative
+	padding-bottom: 2.5rem
+	color: $main
+	text-transform: uppercase
+	text-align: center
+	font-weight: 800
+	font-size: 1.75rem
+	line-height: 1
+	letter-spacing: -.02em
+
+	.fa
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		color: $dark
+		font-size: .5em
+		opacity: .2
+
+	&:before, &:after
+		content: ''
+		position: absolute
+		left: 50%
+		bottom: .25em
+		display: block
+		width: 5.625rem
+		height: 1px
+		background-color: $dark
+		opacity: .2
+	
+	&:before
+		transform: translateY(-50%) translateX(-120%)
+	&:after
+		transform: translateY(-50%) translateX(20%)
+
+.sectionText
+	margin-top: 2em
+	padding: 0 6%
+	text-align: center
+	font-weight: 600
+	font-size: 1.125em
+	line-height: 1.5
+	opacity: .8
+
+%overheadFlexElement
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 10
+	display: flex
+	flex-direction: column
+	background-color: rgba($main, .95)
+	color: $light
+
+.noWrap
+	white-space: nowrap
+
+.owl-dots
+	margin-top: 5rem
+	text-align: center
+
+	.owl-dot
+		display: inline-block
+		box-sizing: border-box
+		margin-left: 1rem
+		border: 1px solid $dark
+		border-radius: 50%
+		width: .5rem
+		height: .5rem
+		opacity: .2
+
+		&:first-child
+			margin-left: 0
+
+		&:hover
+			opacity: 1
+
+	.active
+		opacity: 1
+		background-color: $dark
+
+.animated 
+	animation-duration: 1s
+	animation-fill-mode: both
+
+.fadeInUp
+	animation-name: fadeInUp
+
+.rotateInUpRight
+	animation-name: rotateInUpRight
+
+// header
+
+.header
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	z-index: 30
+	background-color: rgba($dark, .2)
+	color: $light
+
+.header__navigation
+	@extend %wrapper
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	padding: 0 .5rem
+	font-size: .8125em
+
+.header__logoTitle,
+.header__logoSubtitle,
+.header__menuItem
+	display: inline-block
+
+.header__logoLink
+	margin-right: auto
+
+	&:hover .header__logoSubtitle
+		opacity: 1
+
+.header__logoSubtitle
+	margin-left: 1rem
+	font-family: $default-font
+	font-size: .8175rem
+	opacity: .3
+
+	&:before
+		content: '|'
+		display: inline-block
+		margin-right: 1rem
+
+.header__menuButton,
+.header__menuItem
+	padding: 1.5rem .25rem 1.25rem
+
+.header__menuItem
+	margin-left: 1.875rem
+
+	&:first-child
+		margin-left: 0
+
+	&:hover
+		color: rgba($accent, .8)
+
+.header__menuLink
+	display: block
+
+// banner
+
+.banner
+	position: relative
+	background-color: $dark
+	color: $light
+
+.banner__list
+	position: relative
+
+	.owl-dots
+		position: absolute
+		top: 50%
+		right: 3rem
+		transform: translateY(-50%)
+		margin: 0
+		z-index: 20
+
+		.owl-dot
+			display: block
+			margin-top: 1rem
+			margin-left: 0
+			border-color: $light
+
+			&:first-child
+				margin-top: 0
+
+		.active
+			background-color: $light
+
+.banner__listItem
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	align-items: center
+	box-sizing: border-box
+	padding: 6rem .5rem
+	min-height: 100vh
+	font-weight: 300
+	line-height: 1
+
+$bg: url(../img/bannerBg2.jpg), url(../img/bannerBg3.jpg), url(../img/bannerBg1.jpg)
+
+@for $i from 1 through length($bg)
+	.banner .owl-item:nth-child(#{length($bg)}n+#{$i})
+		background: 
+			image: $radialGradient, nth($bg, $i)
+			repeat: no-repeat
+			position: center
+			size: cover
+
+.banner__itemTitle
+	font-size: 3.875em
+
+.banner__itemSubtitle
+	margin-top: 1.375rem
+	font-weight: 300
+	font-size: 3em
+
+	em
+		color: $accent
+
+.banner__itemText
+	position: relative
+	margin: 1.375rem 0 4rem
+	padding: 0 3rem
+	font-size: 1.125em
+	opacity: .9
+
+	&:before, &:after
+		content: ''
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		display: block
+		width: 1.75rem
+		height: 1px
+		background-color: $accent
+	&:before
+		left: 0
+	&:after
+		right: 0
+
+.banner__socialWrapper
+	position: absolute
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 10
+	margin-bottom: 3.25rem
+	text-align: center
+
+.banner__socialLink
+	display: inline-block
+	margin-left: 1rem
+	font-size: 1.25em
+	opacity: .3
+
+	&:first-child
+		margin-left: 0
+
+	&:hover
+		opacity: 1
+
+// features
+
+.features
+	background-color: $sub
+
+.features__list
+	margin-top: 4rem
+
+.features__listItem
+	display: flex
+	align-items: flex-start
+
+.features__itemIconWrapper
+	$size: 2.5em
+	flex-shrink: 0
+	border: 1px solid $accent
+	border-radius: 50%
+	width: $size
+	height: $size
+	text-align: center
+	color: $main
+	line-height: $size
+
+.features__itemTextWrapper
+	flex-grow: 1
+	margin-left: 1rem
+
+.features__itemTitle
+	font-weight: 600
+	font-size: 1.25em
+	line-height: 1
+
+.features__itemText
+	margin-top: 1.25em
+	font-size: .8125em
+	opacity: .7
+
+// works
+
+.works
+	.sectionWrapper
+		padding-bottom: 0
+
+.works__controlsList
+	margin-top: 3.625rem
+	text-align: center
+
+	.active
+		background-color: $main
+		color: $light
+
+.works__controlsItem
+	display: inline-block
+	margin-left: .25rem
+	padding: .5em 1.25em
+	border-radius: 5px
+	font-weight: 700
+	font-size: .875em
+	cursor: pointer
+
+	&:first-child
+		margin-left: 0
+
+.works__galleryList
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin-top: 2.25rem
+
+.works__galleryItem
+	position: relative
+	flex: 1 1 25%
+	animation: appearancing 1s ease-out 0s 1
+
+	&:hover .works__galleryLink
+		opacity: 1
+
+.works__galleryImg
+	display: block
+	width: 100%
+	height: auto
+
+.works__galleryLink
+	@extend %overheadFlexElement
+	justify-content: center
+	align-items: center
+	padding: 1rem
+	line-height: 1
+	opacity: 0
+
+.works__galleryIconWrapper
+	$size: 2.5em
+	border: 1px solid $light
+	border-radius: 50%
+	width: $size
+	height: 2.5em
+	text-align: center
+	line-height: $size
+
+.works__galleryTitle
+	margin-top: 1em
+	font-weight: 700
+	font-size: 1.125em
+
+.works__gallerySubtitle
+	margin-top: .75em
+	font-weight: 300
+	font-size: .875em
+
+// team
+
+.team__list
+	margin-top: 6.75rem
+
+.team__listItem
+	text-align: center
+
+	&:hover .team__itemTextWrapper
+		opacity: 1
+
+.team__itemImgWrapper
+	position: relative
+
+.team__itemImg
+	display: block
+	max-width: 100%
+	height: auto
+	filter: grayscale(1)
+
+.team__itemTextWrapper
+	@extend %overheadFlexElement
+	padding: 1em
+	opacity: 0
+
+.team__itemText
+	&:first-line
+		font-weight: 700
+		line-height: 2
+
+.team__itemSocialWrapper
+	margin-top: auto
+
+.team__itemSocialLink
+	$size: 2em
+	display: inline-block
+	margin-left: .25rem
+	width: $size
+	height: $size
+	background-color: rgba($dark, .8)
+	font-size: 1.5em
+	line-height: $size
+
+	&:first-child
+		margin-left: 0
+
+	&:hover
+		background-color: $dark
+
+.team__itemTitle,
+.team__itemSubtitle
+	margin-top: 1em
+	line-height: 1
+
+.team__itemTitle
+	font-weight: 600
+	font-size: 1.125em
+
+.team__itemSubtitle
+	font-size: .8125em
+	opacity: .56
+
+// facts
+
+.facts
+	background:
+		color: $dark
+		image: $radialGradient, url(../img/factsBg.jpg)
+		repeat: no-repeat
+		position: center top
+		size: cover
+	color: $light
+	
+	.sectionTitle
+		&:before, &:after
+			background-color: $light
+			opacity: .4
+		.fa
+			color: $light
+			opacity: .4
+
+.facts__list
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin-top: 6.25rem
+
+.facts__listItem
+	text-align: center
+
+.facts__itemIconWrapper
+	$size: 3em
+	display: inline-block
+	border: 2px solid rgba($light, .4)
+	border-radius: 50%
+	width: $size
+	height: $size
+	font-size: 2.5em
+	line-height: $size
+
+.facts__itemSubtitle, .facts__itemTitle
+	line-height: 1
+
+.facts__itemSubtitle
+	margin-top: .75em
+	font-weight: 600
+	font-size: 3.75em
+
+.facts__itemTitle
+	margin-top: 1em
+	text-transform: uppercase
+	font-weight: normal
+	font-size: 1.125em
+
+// contact
+
+.contact__fieldWrapper
+	display: flex
+	margin-top: 6rem
+
+.contact__form
+	flex-grow: 1
+	display: flex
+	flex-wrap: wrap
+	margin-right: 2rem
+
+.contact__label
+	box-sizing: border-box
+	flex-basis: 100%
+	margin-top: 2rem
+	padding-right: 2rem
+
+[for*="Name"], [for*="Email"]
+	flex-basis: 50%
+
+.contact__inputTitle
+	display: block
+	font-size: .8125em
+	opacity: .5
+
+.contact__input
+	border-bottom: 1px solid rgba($dark, .2)
+	width: 100%
+
+	&:focus
+		border-color: $dark
+
+[for*="Submit"]
+	text-align: right
+	cursor: pointer
+
+	&:hover .contact__submitIcon
+		color: $dark
+
+.contact__submitIcon
+	color: $main
+
+.contact__submit
+	font-size: 1rem
+	cursor: pointer
+
+.contact__socialWrapper
+	flex-shrink: 0
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	align-items: center
+
+.contact__socialLink
+	font-size: 1.625rem
+	opacity: .2
+
+	&:hover
+		opacity: 1
+
+// footer
+
+.footer
+	background-color: $main
+	color: $light
+
+	.sectionWrapper
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+
+.footer__group
+	flex: 1 1 25%
+	display: flex
+	flex-direction: column
+	box-sizing: border-box
+	padding-left: 2rem
+	font-size: .8125rem
+
+	&:first-child
+		padding-left: 0
+
+.footer__groupTitle
+	margin-bottom: auto
+	font-size: .875rem
+	opacity: .8
+
+.footer__groupText
+	opacity: .9
+
+	.fa
+		color: $dark
+
+.footer__groupLink
+	color: $dark
+
+	&:hover
+		color: $light
+
+.footer__groupTitle,
+.footer__logoLink
+	margin-bottom: auto
+
+.footer__logoLink + .footer__groupText,
+.footer__groupText + .footer__groupLink,
+.footer__inputWrapper,
+.footer__inputWrapper + .footer__groupText,
+.footer__menuList
+	margin-top: 1rem
+
+.footer__logoLink
+	&:hover
+		opacity: .8
+
+.footer__inputWrapper
+	position: relative
+	font-size: 1.25rem
+
+.footer__input
+	border: 2px solid $light
+	border-radius: 5px
+	padding: .5em
+	padding-right: 2rem
+	width: 100%
+	color: inherit
+	font-size: inherit
+
+	&:focus
+		border-color: $dark
+
+.footer__inputButton
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	z-index: 10
+	padding: 0
+	padding-right: .5em
+	background-color: transparent
+	color: inherit
+	font-size: inherit
+	cursor: pointer
+	opacity: .8
+
+	&:hover
+		opacity: 1
+
+.footer__menuList
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+
+.footer__menuItem
+	flex: 1 1 50%
+	box-sizing: border-box
+	padding-top: 1em
+
+	&:hover
+		opacity: .8
+
+.footer__menuLink
+	display: block
+
+.footer__copyrights
+	margin-top: auto
+	color: $dark
+
+.undisplay
+	display: none
+
+@keyframes appearancing
+	0%
+		transform: translateY(10%)
+		opacity: 0
+	50%
+		transform: translateY(0%)
+	100%
+		opacity: 1
+
+@keyframes fadeInUp
+	0%
+		opacity: 0
+		transform: translate3d(0, 100%, 0)
+	100%
+		opacity: 1
+		transform: translate3d(0, 0, 0)
+
+@keyframes rotateInUpRight
+	0%
+		transform-origin: right bottom
+		transform: rotate3d(0, 0, 1, -90deg)
+		opacity: 0
+	100%
+		transform-origin: right bottom
+		transform: translate3d(0, 0, 0)
+		opacity: 1
+
+@import "media" // Всегда в конце

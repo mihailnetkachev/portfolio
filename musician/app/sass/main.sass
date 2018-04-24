@@ -1,0 +1,768 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+@mixin background($url, $position, $size)
+	background:
+		image: $url
+		repeat: no-repeat
+		position: $position
+		size: $size
+
+body, h1, h2, h3, h4, h5, h6, p, ul
+	margin: 0
+	padding: 0
+
+ul
+	list-style-type: none
+
+a
+	color: inherit
+	text-decoration: none
+
+body
+	position: relative
+	overflow-x: hidden
+	min-width: 320px
+	color: $main
+	font-family: $default-font
+	font-size: 16px
+	line-height: 1.5
+	opacity: 1
+
+// general
+
+%wrapper
+	margin: 0 auto
+	max-width: 1200px
+
+.sectionWrapper
+	@extend %wrapper
+	padding: $xlSize $xxsSize
+
+.sectionTitle
+	color: $dark
+	text-align: center
+	text-transform: uppercase
+	font-family: $title-font
+	font-size: 3.125em
+	line-height: 1
+	letter-spacing: .12em
+	
+	&Text
+		position: relative
+
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			right: -$sSize
+			left: -$sSize
+			z-index: -10
+			display: block
+			height: 2px
+			background-color: $main
+
+.sectionText
+	@extend .basicText
+	margin: $mSize auto 0
+	max-width: $xxxlSize
+	text-align: center
+
+.basicText
+	margin-top: $sSize
+	font-size: .875em
+	line-height: 1.75
+	letter-spacing: .12em
+
+.basicHeader
+	color: $dark
+	font-weight: 700
+	font-size: .875em
+
+	&Value
+		display: block
+		padding-bottom: $xxsSize
+		border-bottom: 2px solid $main
+		opacity: .65
+	&Title
+		display: block
+		margin-top: $xxsSize
+		text-transform: uppercase
+
+.basicTitle
+	color: $dark
+	font-weight: 400
+	font-size: 1.5em
+	line-height: 1
+	letter-spacing: .0175em
+
+.basicButton
+	display: block
+	margin-top: $sSize
+	border: 1px solid #636363
+	width: 12.25rem
+	color: $dark
+	text-align: center
+	font-weight: 700
+	font-size: .875em
+	line-height: 3.5rem
+
+	&:hover
+		border-color: $main
+		color: $main
+
+// header
+
+.header
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	z-index: 50
+	background-color: rgba($dark, .1)
+	color: #606060
+
+.header__navigation
+	@extend %wrapper
+	padding: $xxsSize $xxsSize 0
+
+.header__menuButton
+	display: none
+	text-align: right
+
+.header__menuButtonIcon
+	position: relative
+	display: inline-block
+	height: 1.25em
+	width: 1.25em
+
+.miInner
+	position: absolute
+	top: 50%
+	left: 0
+	right: 0
+	transform-origin: center
+	transform: translateY(-50%)
+	display: block
+	height: .2em
+	background-color: $dark
+
+	&:before, &:after
+		content: ''
+		position: absolute
+		left: 0
+		right: 0
+		display: block
+		height: .2em
+		background-color: inherit
+	
+	&:before
+		top: -.4rem
+	&:after
+		bottom: -.4rem
+
+.miInner__open
+	animation: opening .5s forwards
+
+.miInner__close
+	animation: closing .5s forwards
+
+.header__menuList
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	align-items: flex-start
+
+.header__menuItem
+	position: relative
+	padding: 0 $xxsSize
+	text-transform: uppercase
+	font-family: $title-font
+	font-size: 1.125em
+	line-height: $mSize
+	letter-spacing: .12em
+
+	&:hover
+		color: $dark
+
+		.header__menuLink:before
+			content: ''
+			position: absolute
+			top: 50%
+			right: 0
+			left: 0
+			display: block
+			height: 2px
+			background-color: $dark
+
+.header__menuLink
+	display: block
+	width: 100%
+	height: 100%
+
+// banner
+
+.banner
+	@include background(url(../img/bg/banner.png), center, cover)
+	position: relative
+	box-sizing: border-box
+	padding-top: 4.25rem
+	min-height: 100vh
+
+.banner__img
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	z-index: 10
+	display: block
+	max-width: 35vw
+	height: auto
+
+// discography
+
+.discography
+	@include background(url(../img/bg/discography.png), center bottom, contain)
+
+.discography__list
+	margin-top: $lSize
+
+.discography__listItem
+	display: flex
+	flex-wrap: wrap
+	align-items: flex-start
+	margin-top: $lSize
+
+	&:first-child
+		margin-top: 0
+
+	@for $i from 1 through length($buttonBg)
+		&:nth-child(#{length($buttonBg)}n+#{$i}) .discography__itemLink
+			@include background(nth($buttonBg, $i), center, cover)
+
+.discography__itemHeader
+	flex-grow: 1
+
+.discography__itemDescription
+	flex-basis: 55%
+	margin-left: $xsSize
+
+.discography__itemLink
+	@extend .basicButton
+	border: none
+
+// tours
+
+.tours
+	@include background(url(../img/bg/tours.png), center bottom, auto)
+
+@media only screen and (min-width : 2000px)
+	.tours
+		background:
+			position: center $xxlSize
+			size: cover
+
+.tours__article
+	margin-top: 20rem
+
+.tours__articleHeader
+	max-width: 20rem
+
+.tours__articleTitle
+	margin-top: $lSize
+
+.tours__articleText
+	max-width: $xxlSize
+
+// compositions
+
+.compositions__list
+	margin-top: $lSize
+
+.compositions__listItem
+	display: flex
+	flex-wrap: wrap
+	margin-top: $sSize
+
+	&:first-child
+		margin-top: 0
+
+.compositions__itemDescription,
+.compositions__itemVideoField
+	flex: 1 1 50%
+
+.compositions__itemDescription
+	$color: $sub
+	position: relative
+	box-sizing: border-box
+	padding: $sSize
+	background-color: $color
+
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		transform-origin: center
+		transform: translate(-50%, -50%) rotate(45deg)
+		z-index: 20
+		display: block
+		width: $xsSize
+		height: $xsSize
+		background-color: $color
+
+.compositions__listItem
+	&:nth-child(odd)
+		.compositions__itemDescription:after
+			left: 100%
+
+	&:nth-child(even)
+		flex-direction: row-reverse
+		.compositions__itemDescription:after
+			left: 0
+
+.compositions__itemTitle
+	margin-top: $sSize
+
+.compositions__itemFooter
+	display: flex
+	flex-wrap: wrap
+	align-items: flex-end
+	margin-top: $sSize
+
+.compositions__itemLink
+	margin-top: 0
+	margin-right: auto
+
+.compositions__feedbackItem
+	display: inline-block
+	margin-left: 1.25rem
+
+	&:first-child
+		margin-left: 0
+
+.compositions__feedbackItemIcon,
+.compositions__feedbackItemCounter
+	display: inline-block
+
+	&:hover
+		opacity: .5
+
+.compositions__feedbackItemIcon
+	max-width: 1em
+	height: auto
+	vertical-align: middle
+
+.compositions__feedbackItemCounter
+	margin-left: .25rem
+	color: #999999
+	font-family: $special-font
+	font-size: .75em
+
+.compositions__itemVideoField
+	position: relative
+
+.compositions__itemVideoWrapper
+	background-color: $main
+	height: 100%
+
+.compositions__itemVideo
+	position: absolute
+	top: 0
+	left: 0
+	border: none
+	width: 100%
+	height: 100%
+
+// facts
+
+.facts
+	@include background(url(../img/bg/facts.png), center, cover)
+	padding: $xlSize 0
+
+.facts__list
+	overflow: hidden
+
+	.owl-dots
+		margin-top: 5rem
+		text-align: center
+
+	.owl-prev,
+	.owl-next
+		position: absolute
+		top: 50%
+		padding: 1.875rem
+		color: $dark
+		font-size: 2rem
+		&:before
+			$size: 6rem
+			content: ''
+			position: absolute
+			top: 50%
+			z-index: -10
+			transform-origin: center
+			transform: translate(-50%, -50%) rotate(45deg)
+			width: $size
+			height: $size
+			background-color: $light
+
+	.owl-prev
+		left: 0
+		&:before
+			left: 0
+			border-radius: 0 5px 0 0
+	.owl-next
+		right: 0
+		&:before
+			left: 100%
+			border-radius: 0 0 0 5px
+
+.facts__itemIcon
+	display: block
+	margin: 0 auto
+	width: auto !important
+	max-height: 1.875rem
+
+.facts__itemTitle
+	margin: $sSize auto 0
+	max-width: $xxxlSize
+	color: $light
+	text-align: center
+	text-transform: uppercase
+	font-family: $title-font
+	font-weight: 400
+	font-size: 1.875em
+	letter-spacing: .12em
+
+.facts__itemText
+	margin-left: auto
+	margin-right: auto
+	max-width: $xxlSize
+	text-align: center
+
+.facts__itemValue
+	text-align: center
+	color: #565e61
+
+// tracks
+
+.tracks__list
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	counter-reset: list
+
+.tracks__listItem
+	flex: 1 1 25%
+	position: relative
+	box-sizing: border-box
+	overflow: hidden
+	margin-left: $sSize
+	padding: $sSize
+	counter-increment: list 1
+
+	&:nth-child(n*3+1)
+		margin-left: 0
+
+	&:nth-child(n+4)
+		margin-top: $sSize
+
+	&:after
+		content: '0' counter(list)
+		position: absolute
+		right: .5rem
+		bottom: 0
+		z-index: 10
+		transform: translateY(30%)
+		display: block
+		color: $dark
+		font-weight: 700
+		font-size: 5.125rem
+		line-height: 1
+		opacity: .17
+
+	@for $i from 1 through length($tracksBg)
+		&:nth-child(#{length($tracksBg)}n+#{$i})
+			@include background(nth($tracksBg, $i), center, cover)
+
+.tracks__itemLink
+	display: block
+	width: 100%
+	height: 100%
+
+.tracks__itemTitle
+	margin-top: $sSize
+
+// events
+
+.events
+	@include background(url(../img/bg/events.png), left top, cover)
+
+.events__title,
+.events__list
+	max-width: $xxlSize
+	margin-left: auto
+
+.events__title
+	text-align: left
+
+	.sectionTitleText
+		z-index: 0
+
+.events__list
+	margin-top: $lSize
+
+.events__listItem
+	position: relative
+	padding-top: 11rem
+
+	&:before
+		content: ''
+		position: absolute
+		top: $xxsSize
+		left: $xsSize
+		display: block
+		width: 2px
+		height: $xlSize
+		background-color: $main
+
+	&:first-child
+		padding-top: 0
+		&:before
+			display: none
+
+.events__itemTitle
+	position: relative
+	padding-bottom: $xxsSize
+
+	&:after
+		content: ''
+		position: absolute
+		top: 100%
+		left: 0
+		display: block
+		width: $lSize
+		height: 2px
+		background-color: $main
+
+.events__itemText
+	margin-top: $xxsSize
+
+.events__itemValue
+	position: relative
+	padding-top: 3.25rem
+	color: $dark
+	font-weight: 700
+	font-size: .75em
+
+	&:after
+		content: ''
+		position: absolute
+		top: $xxsSize
+		left: $xsSize
+		width: 2px
+		height: $sSize
+		display: block
+		background-color: $main
+
+// history
+
+.history
+	@include background(url(../img/bg/history.png), center -10%, cover)
+	padding: $xlSize 0 $xxlSize
+
+	.owl-stage
+		background-color: transparent
+
+.history__list
+	overflow: hidden
+
+.history__listItem
+	position: relative
+	text-align: center
+	overflow: hidden
+
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		top: 1.7rem
+		display: block
+		width: 100%
+		height: 1px
+		background-color: rgba($dark, .28)
+
+	&:before
+		left: 75%
+	&:after
+		right: 75%
+
+.history__list
+	.owl-item:first-child
+		.history__listItem:after
+			display: none
+	.owl-item:last-child
+		.history__listItem:before
+			display: none
+
+.history__itemTitle
+	position: relative
+	color: #575a59
+	text-transform: uppercase
+	font-family: $title-font
+	font-weight: 400
+	font-size: 2.125em
+	letter-spacing: .12em
+
+	&:before,
+	&:after
+		content: '\2022'
+		display: inline-block
+
+	&:before
+		margin: 0 $sSize
+	&:after
+		margin: 0 $sSize
+
+.history__itemText
+	margin-left: auto
+	margin-right: auto
+	max-width: 12.75rem
+	color: #5a5a58
+
+// contact
+
+.contact
+	@include background(url(../img/bg/contact.png), center top, cover)
+
+.contact__title,
+.contact__text,
+.contact__contentWrapper
+	max-width: $xxlSize
+	margin-left: auto
+	margin-right: 0
+
+.contact__title,
+.contact__text
+	text-align: left
+
+.contact__title
+	.sectionTitleText
+		z-index: 0
+
+.contact__contentWrapper
+	margin-top: $lSize
+	display: flex
+
+.contact__form
+	flex-grow: 1
+
+.contact__formInput
+	display: block
+	box-sizing: border-box
+	margin-top: $sSize
+	outline: none
+	border: none
+	border-bottom: 2px solid $main
+	width: 100%
+	max-width: 25rem
+	background: transparent
+	font-family: $default-font
+
+	&[placeholder]
+		@extend .basicText
+
+	&:focus
+		border-color: $dark
+
+	&:first-child
+		margin-top: 0
+	
+.form__submit
+	display: inline-block
+	margin-top: $sSize
+	border: none
+	background-color: transparent
+	color: $dark
+	text-transform: uppercase
+	font-family: $default-font
+	font-weight: 700
+	font-size: 1.25em
+	line-height: 1
+	cursor: pointer
+
+	&:hover
+		color: $main
+
+.contact__socialWrapper
+	flex-shrink: 0
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	align-items: center
+	margin-left: $xsSize
+	border-left: 2px solid $main
+	padding: $xxsSize 0 $xxsSize $xsSize
+
+.contact__socialIcon
+	display: block
+	max-width: 1.25rem
+	height: auto
+
+	&:hover
+		opacity: .25
+
+.undisplay
+	display: none
+.block
+	display: block
+%animated
+	animation-duration: 1s
+	animation-fill-mode: both
+.fadeInUp
+	@extend %animated
+	animation-name: fadeInUp
+.fadeInLeft
+	@extend %animated
+	animation-name: fadeInLeft
+
+@keyframes apperancing
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+@keyframes fadeInUp
+	0%
+		opacity: 0
+		transform: translate3d(0, 100%, 0)
+	100%
+		opacity: 1
+		transform: translate3d(0, 0, 0)
+
+@keyframes fadeInLeft
+	0%
+		opacity: 0
+		transform: translate3d(100%, 0, 0)
+	100%
+		opacity: 1
+		transform: translate3d(0, 0, 0)
+
+@keyframes opening
+	0%
+		transform: translateY(-50%) rotate(0deg)
+		opacity: 1
+	100%
+		transform: translateY(-50%) rotate(90deg)
+			background-color: yellow
+		opacity: .5
+
+@keyframes closing
+	0%
+		transform: translateY(-50%) rotate(90deg)
+		opacity: .5
+	100%
+		transform: translateY(-50%) rotate(180deg)
+		opacity: 1
+
+@import "media" // Всегда в конце

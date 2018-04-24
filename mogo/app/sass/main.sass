@@ -1,0 +1,1159 @@
+@import "fonts"
+@import "libs"
+@import "reset"
+@import "vars"
+@import "varsBG64"
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.5
+	font-family: $default-font
+	color: $dark
+	overflow-x: hidden
+	opacity: 1
+
+// General classes
+
+%wrapper
+	margin: 0 auto
+	max-width: 1232px
+
+.sectionWrapper
+	@extend %wrapper
+	padding: 7rem $lateralPadding
+
+.passageWrapper
+	@extend %wrapper
+	padding: 4.5rem $lateralPadding
+
+.sectionTitleContainer
+	position: relative
+	padding-bottom: 5.75em
+	text-align: center
+	line-height: 1
+
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		left: 50%
+		bottom: 2.875em
+		transform: translateX(-50%)
+		width: 60px
+		height: 3px
+		background-color: $accent
+
+	.sectionSubTitle
+		font-family: $cursive-font
+		font-size: 1.5em
+
+	.sectionTitle
+		margin-top: 0.75em
+		text-transform: uppercase
+		font-family: $title-font
+		font-weight: bold
+		font-size: 1.875em
+
+.sectionText
+	padding: 0 8em
+	text-align: center
+	font-size: 0.9375em
+	opacity: 0.5
+
+%flexImg
+	display: block
+	width: 100%
+	height: auto
+
+%animatedList
+	display: flex
+	justify-content: space-between
+	margin-top: 7rem
+
+%animatedItem
+	position: relative
+	transition: $longTransition
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: -10
+		background-color: $main
+		transition: $longTransition
+	
+	&:hover
+		transform: translate(-10px, -10px)
+	
+	&:hover:before
+		transform: translate(10px, 10px)
+
+%animatedContent
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 10
+	display: flex
+	justify-content: center
+	align-items: center
+	background-image: $gradient
+	transition: $longTransition
+
+%carouselList
+	position: relative
+
+	.owl-prev, .owl-next
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		font-size: 1.5em
+		opacity: 0.5
+
+		&:hover
+			opacity: 1
+
+	.owl-prev
+		left: 1.5rem
+		
+	.owl-next
+		right: 1.5rem
+
+%carouselItem
+	display: flex
+	align-items: center
+	padding: 0 8em
+
+%carouselImgWrapper
+	flex: 0 0 auto
+
+%carouselTextWrapper
+	flex: 1 1 auto
+
+%carouselTitle
+	position: relative
+	display: inline-block
+	margin-top: 0.85em
+	padding-left: 70px
+	font-family: $cursive-font
+	font-size: 1.5em
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 50%
+		left: 0px
+		transform: translateY(-50%)
+		width: 60px
+		height: 3px
+		background-color: $accent
+
+.sourceSVG
+	display: none
+
+.iconSVG
+	width: 100%
+	height: auto
+
+// header
+
+.header
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	z-index: 20
+	color: $light
+	font-family: $title-font
+	transition: $shortTransition
+
+.header__navigation
+	@extend %wrapper
+	padding: 1.5rem $lateralPadding
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+
+.header__logoLink,
+.header__menuButton
+	flex: 0 0 auto
+
+.header__logoLink,
+.header__menuItem
+	transition: $shortTransition
+
+	&:hover
+		color: $sub
+
+.header__logoLink
+	margin-right: auto
+	font-weight: bold
+	font-size: 1.875em
+	line-height: 1
+
+.header__menuList
+	flex: 0 1 auto
+
+.header__menuItem
+	position: relative
+	display: inline-block
+	margin-right: 2.5em
+	text-transform: uppercase
+	font-size: 0.875em
+
+	&:last-child
+		margin-right: 0
+
+	&:after
+		content: ''
+		display: none
+		position: absolute
+		right: 0
+		bottom: -0.85em
+		left: 0
+		height: 3px
+		background-color: $sub
+		animation: expansionWidth $shortTransition ease-out
+
+	&:hover:after
+		display: block
+
+	&__withoutLine:hover:after
+		display: none
+
+// main
+
+// topBanner
+
+.topBanner
+	@extend %topBannerBackgroundImage
+	position: relative
+	background:
+		// image: url(../img/topBanner-bg.jpg)
+		repeat: no-repeat
+		position: center top
+		size: cover
+	color: $light
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-image: $gradient
+
+.topBannerWrapper
+	display: flex
+	justify-content: center
+	align-items: center
+	position: relative
+	box-sizing: border-box
+	padding: 5rem 0
+	min-height: 100vh
+
+.topBanner__contentWrapper
+	text-align: center
+
+	.sectionTitleContainer
+		font-size: 4.5rem
+		padding-bottom: 1.5em
+
+		&:after
+			bottom: 0.75em
+			background-color: $light
+		
+	.sectionSubTitle
+		font-size: 0.9em
+
+	.sectionTitle
+		margin-top: 0.25em
+		line-height: 0.9
+
+.topBanner__button
+	display: inline-block
+	padding: 0.75em 2.25em
+	border: 3px solid $light
+	text-transform: uppercase
+	font-family: $title-font
+	font-weight: bold
+	font-size: 0.875em
+	transition: $shortTransition
+
+	&:hover
+		color: $sub
+		border-color: $sub
+
+// about, team, works
+
+.about__list,
+.team__list,
+.works__generalList
+	@extend %animatedList
+
+.about__listItem,
+.team__itemImgWrapper
+	@extend %animatedItem
+
+.about__itemImg,
+.team__itemImg
+	@extend %flexImg
+
+.about__itemLink,
+.team__socialList,
+.works__itemTextWrapper
+	@extend %animatedContent
+
+// about
+
+.about__listItem
+	flex: 1 1 auto
+	margin-right: 1.875rem
+
+	&:last-child
+		margin-right: 0
+	
+	&:hover .about__itemLink
+		opacity: 0
+
+.about__itemLink
+	flex-direction: column
+	color: $light
+
+.about__itemIcon
+	max-width: 35px
+	height: auto
+	fill: $light
+
+.about__itemTitle
+	text-transform: uppercase
+	font-family: $title-font
+	font-weight: bold
+	font-size: 1.125em
+
+// team
+
+.team__listItem
+	flex: 1 1 auto
+	margin-right: 1.875rem
+	text-align: center
+	transition: $shortTransition
+
+	&:last-child
+		margin-right: 0
+
+	&:hover
+		.team__itemImgWrapper
+			transform: translate(-10px, -10px)
+			&:before
+				transform: translate(10px, 10px)
+		.team__socialList
+			opacity: 1
+
+.team__socialList
+	opacity: 0
+
+.team__socialItem
+	position: relative
+
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		transform: translateX(50%)
+		z-index: 10
+		width: 1px
+		background-color: $accent
+		opacity: 0.5
+
+	&:last-child:after
+		display: none
+
+.team__socialLink
+	display: block
+	width: 2em
+	height: 2em
+	background-color: $sub
+	color: $accent
+	text-align: center
+	font-size: 1.75em
+	line-height: 2em
+	transition: $shortTransition
+
+	&:hover
+		background-color: $accent
+		color: $light
+
+.team__itemTitle
+	margin-top: 2em
+	text-transform: uppercase
+	font-family: $title-font
+	font-size: 0.875em
+
+.team__itemSubTitle
+	margin-top: 0.25em
+	font-style: italic
+	font-weight: lighter
+	font-size: 0.9375em
+	opacity: 0.5
+
+// works
+
+.works
+	.sectionWrapper
+		padding-bottom: 0
+
+.works__generalItem
+	flex: 1 1 25%
+	display: flex
+	flex-direction: column
+
+.works__itemLink
+	position: relative
+	display: block
+	
+	&:hover
+		.works__itemTextWrapper
+			opacity: 1
+
+.works__itemImg
+	display: block
+	max-width: 100%
+	height: auto
+
+.works__itemTextWrapper
+	flex-direction: column
+	color: $light
+	opacity: 0
+
+.works__itemIcon
+	max-width: 2em
+	height: auto
+	fill: $light
+
+.works__itemTitle
+	margin-top: 1.25em
+	text-transform: uppercase
+	font-family: $title-font
+	font-size: 0.875em
+
+.works__itemSubTitle
+	margin-top: 0.25em
+	font-style: italic
+	font-weight: lighter
+	font-size: 0.9375em
+
+// facts
+
+.facts
+	background-color: $main
+	color: $light
+
+.facts__listItem
+	text-align: center
+	text-transform: uppercase
+
+.facts__itemValue
+	font-family: $title-font
+	font-weight: bold
+	font-size: 4.5em
+	line-height: 0.9
+
+.facts__itemTitle
+	margin-top: 1em
+	font-family: $title-font
+	font-weight: normal
+	font-size: 0.875em
+
+// services
+
+.services__list
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin-top: 5.75rem
+
+.services__listItem
+	flex: 1 1 33.3%
+	display: flex
+	align-items: flex-start
+	box-sizing: border-box
+	padding-right: 1.875rem
+	padding-bottom: 1.875rem
+
+	&:first-child
+		min-height: 160px
+
+.services__itemIcon
+	margin-right: 1.875rem
+	max-width: 35px
+	height: auto
+	fill: $main
+
+.services__itemTitle
+	text-transform: uppercase
+	font-family: $title-font
+	font-size: 0.875em
+
+.services__itemText
+	font-size: 0.9375em
+	opacity: 0.5
+
+// feature
+
+.feature
+	position: relative
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: -10
+		@extend %featureBackgroundImage
+		background:
+			// image: url(../img/feature-bg.jpg)
+			repeat: no-repeat
+			position: center top
+			size: cover
+		opacity: 0.15
+
+	.sectionWrapper
+		padding-bottom: 0
+
+.feature__imgWrapper
+	position: relative
+	text-align: center
+
+.feature__img__main,
+.feature__img__sub
+	display: inline-block
+	max-width: 100%
+	max-height: 100%
+	width: auto
+	height: auto
+
+.feature__img__main
+	position: relative
+	left: -2rem
+	bottom: -6px // !TODO: Смещение на 7px из-за того, что кривая картинка
+
+.feature__img__sub
+	position: absolute
+	left: 60%
+	bottom: -2rem
+
+// offers
+
+.offers__contentWrapper
+	display: flex
+	align-items: flex-start
+	margin-top: 5.75rem
+
+.offers__imgWrapper,
+.offers__list
+	flex: 1 1 50%
+
+.offers__imgWrapper
+	margin-right: 1.875rem
+
+.offers__img
+	@extend %flexImg
+
+.offers__itemTitle
+	position: relative
+	display: block
+	padding: 1.5rem 4rem 1.5rem 3.8125rem
+	border: 1px solid rgba($dark, 0.1)
+	text-transform: uppercase
+	font-family: $title-font
+	font-weight: bold
+	font-size: 0.875em
+	line-height: 1
+	transition: $shortTransition
+
+	&:hover
+		color: $main
+
+	&:hover
+		.offers__itemIcon
+			opacity: 0.5
+
+	.fa
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		right: 1.5rem
+		display: block
+		font-size: 1.5rem
+		opacity: 0.5
+
+.offers__itemIcon
+	position: absolute
+	top: 50%
+	left: 1rem
+	transform: translateY(-50%)
+	width: 30px
+	height: auto
+	fill: $main
+	transition: $shortTransition
+
+.offers__itemText
+	padding: 1.5rem
+	max-height: 12em
+	border-right: 1px solid rgba($dark, 0.1)
+	border-left: 1px solid rgba($dark, 0.1)
+	overflow-y: auto
+	font-style: italic
+	font-weight: lighter
+	font-size: 0.9375em
+	opacity: 0.5
+
+	&:last-child
+		border-bottom: 1px solid rgba($dark, 0.1)
+
+// quotes, reviews
+
+.quotes__list,
+.reviews__list
+	@extend %carouselList
+
+.quotes__listItem,
+.reviews__listItem
+	@extend %carouselItem
+
+.quotes__itemImgWrapper,
+.reviews__itemImgWrapper
+	@extend %carouselImgWrapper
+
+.quotes__itemTextWrapper,
+.reviews__itemTextWrapper
+	@extend %carouselTextWrapper
+
+.quotes__itemText,
+.reviews__itemText
+	font-style: italic
+	font-weight: lighter
+	font-size: 1.5em
+	opacity: 0.5
+
+.quotes__itemTitle,
+.reviews__itemTitle
+	@extend %carouselTitle
+
+// quotes
+
+.quotes
+	background-color: rgba($dark, 0.05)
+
+.quotes__itemImgWrapper
+	box-sizing: border-box
+	margin-right: 3.875em
+	padding: 2.5em
+	width: 9.375em
+	height: 9.375em
+	border: 3px solid $main
+
+.quotes__itemImg
+	@extend %flexImg
+	fill: $main
+
+// reviews
+	
+.reviews__itemImgWrapper
+	margin-right: 2rem
+	width: 210px
+	border-radius: 50%
+	overflow: hidden
+
+// partners
+
+.partners
+	background-color: rgba($dark, 0.05)
+
+.partners__list
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.partners__listItem
+	flex: 1 1 auto
+	margin-right: 5rem
+	transition: $shortTransition
+
+	&:last-child
+		margin-right: 0
+
+	&:hover
+		opacity: 0.5
+
+.partners__itemLink
+	display: block
+
+.partners__itemImg
+	@extend %flexImg
+	
+// clients
+
+.clients
+	position: relative
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: -10
+		@extend %clientsBackgroundImage
+		background:
+			// image: url(../img/clients-bg.jpg)
+			repeat: no-repeat
+			position: center top
+			size: cover
+		opacity: 0.15
+
+.clients__list
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+
+.clients__listItem
+	flex: 1 1 50%
+	display: flex
+	align-items: flex-start
+	box-sizing: border-box
+	padding: 3.125rem
+
+.clients__itemImgWrapper
+	flex: 0 0 auto
+	margin-right: 1.875rem
+	width: 110px
+	height: auto
+	border-radius: 50%
+	overflow: hidden
+
+.clients__itemImg
+	@extend %flexImg
+
+.clients__itemTextWrapper	
+	flex: 1 1 auto
+
+.clients__itemTitle
+	text-transform: uppercase
+	font-family: $title-font
+	font-size: 0.875em
+
+.clients__itemSubTitle
+	position: relative
+	margin-top: 0.5em
+	padding-bottom: 3em
+	font-style: italic
+	font-weight: lighter
+	font-size: 0.9375em
+
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		bottom: 1.5em
+		left: 0
+		z-index: 10
+		width: 60px
+		height: 3px
+		background-color: $accent
+
+.clients__itemText
+	font-size: 0.9375em
+	opacity: 0.5
+
+// blog
+
+.blog__list
+	display: flex
+	justify-content: space-between
+
+.blog__listItem
+	flex: 1 1 33.3%
+	box-sizing: border-box
+	padding: 1rem
+	transition: $longTransition
+
+	&:hover
+		.blog__itemTitle
+			color: $main
+		.blog__itemImgWrapper
+			transform: translate(-10px, -10px)
+			&:before
+				transform: translate(10px, 10px)
+
+.blog__itemLink
+	display: flex
+	flex-direction: column
+	height: 100%
+
+.blog__itemImgWrapper
+	@extend %animatedItem
+
+.blog__itemImg
+	@extend %flexImg
+
+.blog__itemDate
+	position: absolute
+	bottom: 10px
+	left: -10px
+	padding: 1em
+	background-color: $main
+	color: $light
+	text-align: center
+	font-size: 0.9375em
+	line-height: 1
+
+.blog__itemDay
+	font-family: $title-font
+	font-weight: bold
+	font-size: 2em
+	
+.blog__itemMonth
+	margin-top: 0.25em
+	font-style: italic
+	font-weight: lighter
+
+.blog__itemTitle
+	margin-top: 1.5rem
+	text-transform: uppercase
+	font-family: $title-font
+	font-size: 0.875em
+	transition: $longTransition
+
+.blog__itemText
+	margin-top: 1rem
+	font-size: 0.9374em
+	opacity: 0.5
+
+.blog__activityList
+	position: relative
+	margin-top: auto
+	padding-top: 3rem
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 2rem
+		right: 0
+		left: 0
+		width: 100%
+		height: 1px
+		background-color: rgba($dark, 0.1)
+
+.blog__activityItem
+	display: inline-block
+	margin-right: 1em
+	font-style: italic
+	font-weight: lighter
+	
+	&:last-child
+		margin-right: 0
+
+	.fa
+		display: inline-block
+		margin-right: 0.25em
+		color: $main
+
+// map
+
+.map
+	min-height: 450px
+
+.map__tooltipText
+	text-transform: uppercase
+	font-family: $title-font
+	font-size: 0.875em
+	
+// footer
+
+.footer
+	background-color: rgba($dark, 0.05)
+
+.footer__list
+	display: flex
+	justify-content: space-between
+
+.footer__listItem
+	margin-right: 2rem
+
+	&:last-child
+		margin-right: 0
+
+	&__main
+		flex: 1 1 40%
+
+	&__blog
+		flex: 1 1 auto
+
+	&__gallery
+		flex: 0 1 auto
+
+// main-block
+
+.footer__title
+	font-family: $title-font
+	font-weight: bold
+	font-size: 2.875em
+	opacity: 0.5
+	transition: $shortTransition
+
+	&:hover
+		opacity: 1
+
+.footer__text
+	margin-top: 2rem
+	font-size: 0.9375em
+	opacity: 0.5
+
+.footer__socialListTitle
+	margin-top: 3em
+	font-family: $title-font
+	font-weight: bold
+	font-size: 0.875em
+
+	&__value
+		font-size: 1.25em
+
+.footer__socialList
+	position: relative
+	padding-top: 2rem
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 1rem
+		right: 0
+		left: 0
+		width: 100%
+		height: 1px
+		background-color: rgba($dark, 0.1)
+
+.footer__socialItem
+	display: inline-block
+	margin-right: 1em
+	color: $main
+	font-size: 1.125em
+	transition: $shortTransition
+
+	&:last-child
+		margin-right: 0
+
+	&:hover
+		color: $dark
+
+.footer__form
+	margin-top: 3em
+	display: flex
+
+.footer__formItem,
+.footer__formButton
+	box-sizing: border-box
+	padding: 1em
+	border: 1px solid rgba($dark, 0.1)
+	outline: none
+	font-size: 0.9375em
+	transition: $shortTransition
+
+.footer__formItem
+	flex: 1 1 auto
+	max-width: 17.5em
+
+.footer__formButton
+	border: none
+	text-transform: uppercase
+	background-color: $main
+	color: $light
+	font-family: $title-font
+	font-weight: bold
+	cursor: pointer
+
+	&:hover
+		background-color: $dark
+
+// sub-blocks
+
+.footer__itemTitle
+	text-transform: uppercase
+	font-family: $title-font
+	font-weight: bold
+	font-size: 0.875em
+
+.footer__blogList,
+.footer__galleryList
+	margin-top: 2.5rem
+
+// blog-block
+
+.footer__blogItem
+	margin-top: 2rem
+
+	&:first-child
+		margin-top: 0
+
+	&:hover
+		.footer__blogImg
+			opacity: 0.5
+		.footer__blogTitle
+			color: $main
+
+.footer__blogLink
+	display: flex
+	align-items: center
+
+.footer__blogImgWrapper
+	flex: 0 0 25%
+	max-width: 120px
+	margin-right: 1.5rem
+
+.footer__blogImg
+	@extend %flexImg
+	transition: $shortTransition
+
+.footer__blogTextWrapper
+	flex: 1 1 auto
+	
+.footer__blogTitle
+	text-transform: uppercase
+	font-family: $title-font
+	font-weight: bold
+	font-size: 0.75em
+	transition: $shortTransition
+	
+.footer__blogSubTitle
+	margin-top: 1em
+	font-style: italic
+	font-weight: lighter
+	font-size: 0.8125em
+	opacity: 0.5
+
+// gallery-block
+
+.footer__galleryList
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	max-width: 310px
+
+.footer__galleryItem
+	flex: 0 1 33.3%
+	box-sizing: border-box
+	padding: 1px
+	transition: $shortTransition
+
+	&:hover
+		opacity: 0.5
+
+.footer__galleryLink
+	display: block
+
+.footer__galleryImg
+	@extend %flexImg
+
+.footer__itemLink
+	margin-top: 1.25rem
+	display: block
+	font-style: italic
+	font-weight: lighter
+	font-size: 0.8125
+
+// copyrights
+
+.footer__copyrights
+	padding: 1.5rem 0
+	border-top: 1px solid rgba($dark, 0.1)
+	text-align: center
+	font-family: $title-font
+	font-weight: bold
+	font-size: 0.875em
+
+	&Link
+		color: $accent
+
+// anchor
+
+.anchor
+	position: fixed
+	bottom: $lateralPadding
+	left: $lateralPadding
+	z-index: 10
+	display: block
+	width: 2em
+	height: 2em
+	background-color: $sub
+	color: $accent
+	text-align: center
+	font-size: 1.75em
+	line-height: 2em
+	transition: $shortTransition
+
+	&:hover
+		background-color: $accent
+		color: $light
+
+// General classes
+
+.block
+	display: block
+.undisplayed
+	display: none
+.translucentBackground
+	background-image: linear-gradient(to bottom, rgba($sub, 0.9) 0%, rgba($accent, 0.9) 100%)
+.animated 
+	animation-duration: 1s
+	animation-fill-mode: both
+.fadeInUp
+	animation-name: fadeInUp
+.rotateInUpRight
+	animation-name: rotateInUpRight
+
+@keyframes expansionWidth
+	from
+		width: 0%
+	to
+		width: 100%
+
+@keyframes fadeInUp
+	0%
+		opacity: 0
+		transform: translate3d(0, 100%, 0)
+	100%
+		opacity: 1
+		transform: translate3d(0, 0, 0)
+
+@keyframes rotateInUpRight
+	0%
+		transform-origin: right bottom
+		transform: rotate3d(0, 0, 1, -90deg)
+		opacity: 0
+	100%
+		transform-origin: right bottom
+		transform: translate3d(0, 0, 0)
+		opacity: 1
+
+@import "media" // Всегда в конце

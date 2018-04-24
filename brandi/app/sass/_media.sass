@@ -1,0 +1,100 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+@media only screen and (max-width: 1025px)
+
+	.header__menuList
+		flex-basis: 100%
+
+	.works__galleryItem
+		flex-basis: 50%
+	.works__galleryLink
+		justify-content: flex-end
+		align-items: flex-end
+		background: $linearGradient
+		opacity: 1
+
+	.team__itemText
+		display: none
+	.team__itemTextWrapper
+		background-color: transparent
+		opacity: 1
+	
+	.footer__group
+		&:last-child
+			margin-top: 2rem
+			padding-left: 0
+			flex-basis: 100%
+
+@media only screen and (max-width: 800px)
+
+	.banner__listItem
+		font-size: 80%
+	
+	.facts__listItem
+		flex-basis: 50%
+		&:nth-child(n+3)
+			margin-top: 3rem
+
+	.footer__group
+		&:nth-last-child(2)
+			margin-top: 2rem
+			padding-left: 0
+			flex-basis: 100%
+	.footer__menuItem
+		flex-basis: 25%
+
+@media only screen and (max-width: 550px)
+
+	.banner__listItem
+		font-size: 60%
+
+	.contact__fieldWrapper
+		margin-top: 4rem
+	.contact__fieldWrapper
+		flex-direction: column
+	.contact__label
+		padding: 0
+	.contact__form
+		margin: 0
+	[for*="Name"], [for*="Email"]
+		flex-basis: 100%
+	.contact__socialWrapper
+		flex-direction: row
+		margin: 4rem 2rem 0
+
+	.works__galleryItem
+		flex-basis: 100%
+	
+	.footer__group
+		&:nth-child(2)
+			margin-top: 2rem
+			padding-left: 0
+			flex-basis: 100%
+	.footer__menuItem
+		flex-basis: 50%
+
+@media only screen and (max-width: 450px)
+	
+
+	.header__logoSubtitle,
+	.banner__list .owl-dots
+			display: none
+
+	.header__menuItem
+		display: block
+		&:first-child
+			margin-left: 1.875rem
+
+	.banner__listItem
+		font-size: 50%
+	.banner__itemText
+		font-size: 1.875em
+
+	.facts__listItem
+		flex-basis: 100%
+		margin-top: 3rem
+
+		&:first-child
+			margin-top: 0
